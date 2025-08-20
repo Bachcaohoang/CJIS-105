@@ -1,0 +1,80 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0f1117;
+  color: #fff;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: #1a1c23;
+}
+
+.header nav a {
+  margin: 0 10px;
+  color: #ccc;
+  text-decoration: none;
+}
+
+.header input {
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+}
+
+.main-content {
+  padding: 20px;
+}
+
+.sub {
+  color: #aaa;
+  margin-top: 0;
+}
+
+.banner {
+  position: relative;
+  margin: 20px 0;
+}
+
+.banner img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.banner-info {
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
+  background: rgba(0,0,0,0.6);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.movie-list {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding-bottom: 20px;
+}
+
+.movie-card {
+  min-width: 150px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.movie-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+}
+
+.section-title {
+  margin-top: 40px;
+}
