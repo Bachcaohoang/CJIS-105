@@ -1,13 +1,15 @@
-import MovieCard from './MovieCard';
-
-function MovieList({ movies, onSelect }) {
+export default function MovieList({ movies, onSelect }) {
   return (
-    <div className="movie-list">
-      {movies.map((movie) => (
-        <MovieCard key={movie.id} movie={movie} onClick={() => onSelect(movie)} />
+    <ul style={{ listStyle: "none", padding: 0 }}>
+      {movies.slice(0, 6).map((m) => (
+        <li
+          key={m.id}
+          onClick={() => onSelect(m)}
+          style={{ cursor: "pointer", margin: "8px 0", padding: "6px", background: "#f4f4f4" }}
+        >
+          {m.title}
+        </li>
       ))}
-    </div>
+    </ul>
   );
 }
-
-export default MovieList;

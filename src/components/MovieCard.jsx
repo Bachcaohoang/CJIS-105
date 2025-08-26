@@ -1,11 +1,9 @@
-function MovieCard({ movie, onClick }) {
+export default function MovieCard({ movie, onSelect }) {
   return (
-    <div className="movie-card" onClick={onClick}>
+    <div className="card" onClick={() => onSelect(movie)}>
       <img src={movie.image} alt={movie.movieName} />
+      <h3>{movie.movieName}</h3>
       <p>Episode {movie.episode}</p>
-      <h4>{movie.movieName}</h4>
     </div>
-  );
+  )
 }
-
-export default MovieCard;

@@ -1,25 +1,36 @@
-import { useState } from 'react';
-import './index.css';
-import { movies } from './data/movies';
-import ExploreBanner from './components/ExploreBanner';
-import MovieList from './components/MovieList';
-import Header from './components/Header';
+import { useState } from "react"
+import { MOVIES } from "./data/movies"
+import MovieCard from "./components/MovieCard"
+import Banner from "./components/Banner"
+import "./styles.css"
 
-function App() {
-  const [selectedMovie, setSelectedMovie] = useState(movies[0]);
+export default function App() {
+  const [selected, setSelected] = useState(MOVIES[0])
 
   return (
-    <div className="app">
-      <Header />
-      <div className="main-content">
-        <h2>Explore</h2>
-        <p className="sub">What are you gonna watch today ?</p>
-        <ExploreBanner movie={selectedMovie} />
-        <h3 className="section-title">New Release</h3>
-        <MovieList movies={movies} onSelect={setSelectedMovie} />
-      </div>
-    </div>
-  );
-}
+    <div className="container">
+      <header>
+        <h1>Anonime</h1>
+        <nav>
+          <a href="#">Explore</a>
+          <a href="#">New Release</a>
+        </nav>
+      </header>
 
-export default App;
+      <section className="explore">
+        <h2>Explore</h2>
+        <p>What do you want to watch today?</p>
+        <Banner movie={selected} />
+      </section>
+
+      <section>
+        <h2>New Release</h2>
+        <div className="grid">
+          {MOVIES.map(m => (
+            <MovieCard key={m.id} movie={m} onSelect={setSelected} />
+          ))}
+        </div>
+      </section>
+    </div>
+  )
+}
